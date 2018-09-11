@@ -6,4 +6,4 @@ To use it is very simple, just enter the folder where the script is and enter th
 ```$ python3 main.py```
 
 ## Post on Blog
-See this post on my blog accessing [https://rafaellaurindo.com.br/classificacao-de-imagens-com-python](https://rafaellaurindo.com.br/classificacao-de-imagens-com-python).
+See this post on my blog accessing [https://rafaellaurindo.com.br/classificando-imagens-com-python](https://rafaellaurindo.com.br/classificando-imagens-com-python).
