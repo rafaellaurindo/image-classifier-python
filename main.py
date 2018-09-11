@@ -56,7 +56,7 @@ score = classifier_linear.score(X,Y)
 print('Result: {}'.format(prediction))
 
 # Show prediction score
-print('Score of precision: {:.0f}%'.format(score * 100))
+print('Score of precision: {:.1f}%'.format(score * 100))
 
 # Set result as image of prediction
 if prediction == 1:
@@ -72,9 +72,52 @@ elif prediction == 5:
 
 # Show image based on prediction
 cv2.imshow("Result", result)
-
 # Show the image tested
 cv2.imshow("Test", test_ceara_g)
+# Wait for key
+cv2.waitKey(0)
 
+print('---------------------------------------')
+
+
+# Create the classifier 
+classifier_linear_regression = SVR(kernel='linear')
+
+print('Start SVR Train')
+
+# Train the classifier with images and indexes
+classifier_linear_regression.fit(X,Y)
+
+print('Finished train')
+print(40 * '-')
+
+# Predict the category of image 
+prediction = classifier_linear_regression.predict(test_ceara.reshape(1,-1))
+
+# Score of predict 
+score = classifier_linear_regression.score(X,Y)
+
+# Show prediction
+print('Result: {}'.format(prediction))
+
+# Show prediction score
+print('Score of precision: {:.1f}%'.format(score * 100))
+
+# Set result as image of prediction
+if prediction == 1:
+	result = atletico_g
+elif prediction == 2:
+	result = corinthians_g
+elif prediction == 3:
+	result = flamengo_g
+elif prediction == 4:
+	result = palmeiras_g
+elif prediction == 5:
+	result = ceara_g
+
+# Show image based on prediction
+cv2.imshow("Result", result)
+# Show the image tested
+cv2.imshow("Test", test_ceara_g)
 # Wait for key
 cv2.waitKey(0)
